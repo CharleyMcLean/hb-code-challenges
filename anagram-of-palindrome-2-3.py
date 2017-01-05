@@ -21,16 +21,30 @@ def is_anagram_of_palindrome(word):
         >>> is_anagram_of_palindrome("arceaceb")
         False
     """
+    if not word:
+        return False
+
+    # Create an empty dictionary to store the letters and their counts.
     letters = {}
     for letter in word:
-        if letter in letters:
-            letters[letter] += 1
-        else:
-            letters[letter] = 1
-        # alternatively?
-        # letters.get() syntax?
+        letters[letter] = letters.get(letter, 0) + 1
 
-    for letter in letters... 
+    # If either all letter counts are even, or all are even except one that has
+    # a value of one, then return True.
+    # Create a counter for letters with the value of 1.
+    one_count = 0
+    for letter in letters:
+        if letters[letter] % 2 == 0:
+            continue
+        elif letters[letter] == 1:
+            one_count += 1
+        else:
+            return False
+
+    if one_count != 1 or one_count != 0:
+        return False
+    else:
+        return True   
     # check for even number of letters
 
 
