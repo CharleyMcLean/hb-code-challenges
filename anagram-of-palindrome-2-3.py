@@ -31,21 +31,23 @@ def is_anagram_of_palindrome(word):
 
     # If either all letter counts are even, or all are even except one that has
     # a value of one, then return True.
-    # Create a counter for letters with the value of 1.
+    # Create a counter for letters with the value of 1, skip the letters with
+    # value 2, and counter for all others.
     one_count = 0
-    for letter in letters:
-        if letters[letter] % 2 == 0:
-            continue
-        elif letters[letter] == 1:
-            one_count += 1
-        else:
-            return False
+    other_odd_count = 0
 
-    if one_count != 1 or one_count != 0:
-        return False
-    else:
-        return True   
-    # check for even number of letters
+    for num in letters.values():
+        if num == 1:
+            one_count += 1
+        elif num % 2 == 0:
+            continue
+        else:
+            other_odd_count += 1
+
+    if (one_count == 1 and not other_odd_count) or (not one_count and not other_odd_count):
+        return True
+
+    return False
 
 
 #####################################################################
