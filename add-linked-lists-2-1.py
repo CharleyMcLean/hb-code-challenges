@@ -1,3 +1,6 @@
+# Challenge - Harder
+# Concepts - Linked Lists
+
 class Node(object):
     """Linked list node."""
 
