@@ -33,6 +33,11 @@ def add_linked_lists(l1, l2):
     l2: the head node of another "reverse-digit" format
 
     Returns: head node of linked list of sum in "reverse-digit" format.
+
+    >>> l1 = Node(1, Node(2, Node(3)))
+    >>> l2 = Node(4, Node(5, Node(6)))
+    >>> add_linked_lists(l1, l2)
+    '975'
     """
 
     # Create reversed strings of the two linked lists
@@ -48,3 +53,16 @@ def add_linked_lists(l1, l2):
         i += 1
 
     return "".join(out)
+
+
+#####################################################################
+# END OF ASSESSMENT: You can ignore everything below.
+
+if __name__ == "__main__":
+    import doctest
+
+    print
+    result = doctest.testmod()
+    if not result.failed:
+        print "ALL TESTS PASSED. GOOD WORK!"
+    print
